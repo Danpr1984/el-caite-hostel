@@ -1,0 +1,126 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  lang: "es" | "en";
+}
+const { title, description, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+      :root {
+        --bg-main:   #FAF6EE;   /* crema cálida — fondo principal */
+        --bg-sand:   #F0E6D2;   /* arena — secciones alternas */
+        --bg-warm:   #F7E4D2;   /* durazno suave — para destacar bloques puntuales (ej. recomendados) */
+        --bg-card:   #FFFFFF;
+        --accent:    #3F8FAE;   /* azul océano suave — labels, acentos, checkmarks */
+        --accent-dk: #2A6178;   /* azul suave oscuro — hover, fondos full-bleed */
+        --pop:       #E8792E;   /* atardecer — color de los botones primarios (CTA) */
+        --pop-dk:    #C15F22;   /* atardecer oscuro — hover de botones, texto sobre blanco */
+        --terracotta: #B5672F;  /* terracota suave, con más naranja — fondos full-bleed (franja de stats, CTA final) */
+        --text:      #211B14;   /* casi negro cálido */
+        --muted:     #6B6156;   /* gris cálido — body text */
+        --border:    #E3D8C2;   /* borde cálido */
+        --white:     #fff;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: 'Work Sans', 'Inter', sans-serif;
+        font-weight: 300;
+        color: var(--text);
+        background: var(--bg-main);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Bricolage Grotesque', 'Work Sans', sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .section-label {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--pop);
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 30px;
+        border-radius: 999px;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.25s ease;
+      }
+
+      .btn-primary {
+        background: var(--pop);
+        color: var(--white);
+      }
+      .btn-primary:hover { background: var(--pop-dk); }
+
+      .btn-outline {
+        background: transparent;
+        border-width: 2px;
+        border-color: var(--white);
+        color: var(--white);
+      }
+      .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+      .btn-white {
+        background: var(--white);
+        border-color: var(--white);
+        color: var(--pop-dk);
+      }
+      .btn-white:hover { background: var(--bg-sand); }
+
+      @media (max-width: 860px) {
+        .container { padding: 0 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

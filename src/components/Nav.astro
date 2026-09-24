@@ -1,0 +1,154 @@
+---
+interface Props {
+  lang: "es" | "en";
+}
+const { lang } = Astro.props;
+
+const t = {
+  es: {
+    home: "/",
+    otherLang: "/en/",
+    otherLangLabel: "EN",
+    links: [
+      { href: "#hostel", label: "El Hostel" },
+      { href: "#habitaciones", label: "Habitaciones" },
+      { href: "#amenidades", label: "Amenidades" },
+      { href: "#ubicacion", label: "Ubicación" },
+    ],
+    cta: "Reservar",
+  },
+  en: {
+    home: "/en/",
+    otherLang: "/",
+    otherLangLabel: "ES",
+    links: [
+      { href: "#hostel", label: "The Hostel" },
+      { href: "#rooms", label: "Rooms" },
+      { href: "#amenities", label: "Amenities" },
+      { href: "#location", label: "Location" },
+    ],
+    cta: "Book",
+  },
+}[lang];
+---
+
+<header class="nav" id="site-nav">
+  <div class="nav-inner container">
+    <a href={t.home} class="nav-logo">El Caite Hostel</a>
+    <nav class="nav-links">
+      {t.links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+    <div class="nav-actions">
+      <a href={t.otherLang} class="lang-switch">{t.otherLangLabel}</a>
+      <a href="#reservar" class="btn btn-primary nav-cta">{t.cta}</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile">
+    {t.links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+    <a href={t.otherLang}>{t.otherLangLabel === "EN" ? "English" : "Español"}</a>
+    <a href="#reservar" class="btn btn-primary">{t.cta}</a>
+  </nav>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 246, 238, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .nav-logo {
+    font-family: 'Bricolage Grotesque', 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pop-dk); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .lang-switch:hover { border-color: var(--pop-dk); color: var(--pop-dk); }
+  .nav-cta { height: 40px; padding: 0 22px; font-size: 0.78rem; }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-toggle span {
+    width: 22px; height: 1.5px;
+    background: var(--text);
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 20px 20px;
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-mobile a {
+    padding: 12px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-mobile .btn { margin-top: 12px; justify-content: center; }
+
+  @media (max-width: 860px) {
+    .nav-links, .nav-actions .nav-cta { display: none; }
+    .nav-actions { gap: 10px; }
+    .nav-toggle { display: flex; }
+    .nav-mobile.open { display: flex; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const mobile = document.getElementById('nav-mobile');
+  toggle?.addEventListener('click', () => mobile?.classList.toggle('open'));
+  mobile?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => mobile.classList.remove('open'))
+  );
+</script>

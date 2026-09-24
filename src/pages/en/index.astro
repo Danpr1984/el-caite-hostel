@@ -1,34 +1,34 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-import Carousel from "../components/Carousel.astro";
-import Icon from "../components/Icon.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Carousel from "../../components/Carousel.astro";
+import Icon from "../../components/Icon.astro";
 
 /* =========================================================
-   CONTENIDO EDITABLE — cambia aquí los textos y números.
-   No necesitas tocar el HTML de abajo para actualizar el sitio.
-   Todo el texto marcado [pendiente confirmar] es un placeholder.
+   EDITABLE CONTENT — change the copy and numbers here.
+   No need to touch the HTML below to update the site.
+   Any text marked [pending confirmation] is a placeholder.
    ========================================================= */
 const content = {
   hero: {
-    title: "Tu basecamp frente al Pacífico",
+    title: "Your basecamp on the Pacific",
     subtitle: "San Juan del Sur, Nicaragua",
-    cta: "Reservar",
-    ctaSecondary: "Conoce el hostel",
+    cta: "Book",
+    ctaSecondary: "Discover the hostel",
   },
   intro: {
     stats: [
-      { value: "8", label: "Habitaciones en total" },
-      { value: "3 min", label: "Caminando a la playa" },
-      { value: "2009", label: "Operando desde" },
-      { value: "24h", label: "Recepción" },
+      { value: "8", label: "Rooms in total" },
+      { value: "3 min", label: "Walk to the beach" },
+      { value: "2009", label: "Open since" },
+      { value: "24h", label: "Front desk" },
     ],
   },
   split: {
-    label: "El Hostel",
-    heading: "Un lugar para conocer gente y descansar bien",
-    text: "Ubicado en el malecón de San Juan del Sur, a solo 3 minutos caminando de la playa y el puerto, El Caite Hostel es un punto de encuentro para viajeros que buscan surf, comunidad y buena energía. Terraza, wifi gratuito y un equipo listo para ayudarte a armar tu itinerario.",
+    label: "The Hostel",
+    heading: "A place to meet people and rest well",
+    text: "Located on the malecón of San Juan del Sur, just a 3-minute walk from the beach and the harbor, El Caite Hostel is a gathering point for travelers looking for surf, community, and good energy. Terrace, free wifi, and a team ready to help you plan your itinerary.",
     images: [
       "/images/caite/about-1.jpg",
       "/images/caite/about-2.jpg",
@@ -36,10 +36,10 @@ const content = {
     ],
   },
   rooms: {
-    label: "Habitaciones",
-    heading: "Habitaciones y Espacios Comunes",
-    text: "Todas nuestras habitaciones son privadas, con baño propio. Estas son fotos reales del hostel, para que sepas exactamente qué esperar.",
-    features: ["Baño privado", "Aire acondicionado", "Habitaciones sin humo", "Ambiente familiar"],
+    label: "Rooms",
+    heading: "Rooms & Common Spaces",
+    text: "All of our rooms are private, with their own bathroom. These are real photos of the hostel, so you know exactly what to expect.",
+    features: ["Private bathroom", "Air conditioning", "Non-smoking rooms", "Family-friendly"],
     images: [
       "/images/caite/room-dorm-1.jpg",
       "/images/caite/room-private-1.jpg",
@@ -51,55 +51,55 @@ const content = {
     ],
   },
   amenities: {
-    label: "Amenidades",
-    heading: "El Caite Hostel incluye",
+    label: "Amenities",
+    heading: "El Caite Hostel includes",
     items: [
-      { icon: "wifi", title: "Wifi gratis", desc: "En todas las habitaciones y áreas comunes." },
-      { icon: "car", title: "Traslado al aeropuerto", desc: "Coordina tu llegada con nosotros." },
-      { icon: "utensils", title: "Restaurante", desc: "Comidas disponibles en la propiedad." },
-      { icon: "ban", title: "Habitaciones sin humo", desc: "Todo el hostel es libre de humo." },
-      { icon: "users", title: "Habitaciones familiares", desc: "Espacio pensado para grupos y familias." },
-      { icon: "bell", title: "Servicio de habitaciones", desc: "Atención cuando la necesites." },
-      { icon: "martini", title: "Bar", desc: "Bebidas y buen ambiente." },
-      { icon: "coffee", title: "Desayuno", desc: "Empieza el día con energía." },
+      { icon: "wifi", title: "Free wifi", desc: "Throughout the rooms and common areas." },
+      { icon: "car", title: "Airport shuttle", desc: "Coordinate your arrival with us." },
+      { icon: "utensils", title: "Restaurant", desc: "Meals available on site." },
+      { icon: "ban", title: "Non-smoking rooms", desc: "The whole hostel is smoke-free." },
+      { icon: "users", title: "Family rooms", desc: "Space designed for groups and families." },
+      { icon: "bell", title: "Room service", desc: "Assistance whenever you need it." },
+      { icon: "martini", title: "Bar", desc: "Drinks and good vibes." },
+      { icon: "coffee", title: "Breakfast", desc: "Start the day with energy." },
     ],
   },
   ikal: {
-    label: "Recomendado",
+    label: "Recommended",
     heading: "Ikal Resto-Bar",
-    text: "Del mismo equipo detrás de El Caite Hostel, a solo 1 minuto caminando. El lugar ideal para tomar algo y comer bien después de un día de playa. [pendiente confirmar: horario y redes sociales]",
+    text: "From the same team behind El Caite Hostel, just a 1-minute walk away. The perfect spot for a drink and a good meal after a day at the beach. [pending confirmation: hours and social media]",
     images: ["/images/caite/ikal-1.jpg", "/images/caite/ikal-2.jpg"],
   },
   location: {
-    label: "Ubicación",
-    heading: "Cerca de todo lo importante",
+    label: "Location",
+    heading: "Close to everything that matters",
     pills: [
-      { icon: "waves", label: "Playa de San Juan del Sur — 3 min caminando" },
-      { icon: "map-pin", label: "Puerto de San Juan del Sur — 3 min caminando" },
-      { icon: "utensils", label: "Restaurantes (Ikal, Josseline's, El Timón) — a pasos" },
-      { icon: "compass", label: "Playas de surf (El Remanso, Nacascolo) — 10 km" },
+      { icon: "waves", label: "San Juan del Sur beach — 3 min walk" },
+      { icon: "map-pin", label: "San Juan del Sur harbor — 3 min walk" },
+      { icon: "utensils", label: "Restaurants (Ikal, Josseline's, El Timón) — steps away" },
+      { icon: "compass", label: "Surf beaches (El Remanso, Nacascolo) — 10 km" },
     ],
   },
   rules: {
-    label: "Reglas del Hostel",
-    heading: "Para una buena estadía",
+    label: "House Rules",
+    heading: "For a great stay",
     items: [
-      "Check-in: desde las 2:00 pm — Check-out: antes de las 12:00 pm",
-      "Check-in anticipado o fuera de horario (12:30 pm–10:30 pm): sujeto a disponibilidad y cargo adicional",
-      "Check-out extendido: sujeto a disponibilidad, cargo de USD 5",
-      "Cama extra: USD 10 por noche",
-      "La persona que hace el check-in debe ser mayor de 18 años",
-      "No se aceptan mascotas",
-      "Prohibido fumar en toda la propiedad",
-      "Estadía mínima: 1 noche",
+      "Check-in: from 2:00 pm — Check-out: before 12:00 pm",
+      "Early or late check-in (arrivals 12:30 pm–10:30 pm): subject to availability and an extra charge",
+      "Late check-out: subject to availability, USD 5 charge",
+      "Extra bed: USD 10 per night",
+      "The guest checking in must be 18 or older",
+      "No pets allowed",
+      "Smoke-free property",
+      "Minimum stay: 1 night",
     ],
-    contactText: "¿Dudas antes de reservar? Escríbenos por WhatsApp.",
+    contactText: "Questions before booking? Message us on WhatsApp.",
     whatsappNumber: "+505 0000 0000",
     whatsappLink: "https://wa.me/50500000000",
   },
   ctaSection: {
-    heading: "Tu próxima aventura empieza en El Caite",
-    reserveButton: "Reservar",
+    heading: "Your next adventure starts at El Caite",
+    reserveButton: "Book",
     whatsappButton: "WhatsApp",
   },
 };
@@ -110,10 +110,10 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
 
 <BaseLayout
   title="El Caite Hostel — San Juan del Sur"
-  description="El Caite Hostel: tu basecamp en San Juan del Sur, Nicaragua. Habitaciones familiares, privadas y espacios comunes a pasos de la playa."
-  lang="es"
+  description="El Caite Hostel: your basecamp in San Juan del Sur, Nicaragua. Family rooms, private rooms, and common spaces steps from the beach."
+  lang="en"
 >
-  <Nav lang="es" />
+  <Nav lang="en" />
 
   <!-- HERO -->
   <section class="hero">
@@ -123,7 +123,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
       <span class="hero-location">{content.hero.subtitle}</span>
       <h1>{content.hero.title}</h1>
       <div class="hero-buttons">
-        <a href="#reservar" class="btn btn-white">{content.hero.cta}</a>
+        <a href="#book" class="btn btn-white">{content.hero.cta}</a>
         <a href="#hostel" class="btn btn-outline">{content.hero.ctaSecondary}</a>
       </div>
     </div>
@@ -156,7 +156,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
   </section>
 
   <!-- ROOMS -->
-  <section class="rooms" id="habitaciones">
+  <section class="rooms" id="rooms">
     <div class="container">
       <span class="section-label">{content.rooms.label}</span>
       <h2 class="rooms-heading">{content.rooms.heading}</h2>
@@ -169,29 +169,29 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
       <div class="rooms-gallery" data-images={JSON.stringify(content.rooms.images)}>
         {content.rooms.images.slice(0, roomsVisibleCount).map((src, i) => (
           <div class="gallery-item" data-index={i}>
-            <img src={src} alt={`Habitaciones y espacios comunes El Caite Hostel ${i + 1}`} loading="lazy" />
+            <img src={src} alt={`Rooms and common spaces at El Caite Hostel ${i + 1}`} loading="lazy" />
             {i === roomsVisibleCount - 1 && roomsExtraCount > 0 && (
-              <div class="gallery-more-overlay">+{roomsExtraCount} fotos</div>
+              <div class="gallery-more-overlay">+{roomsExtraCount} photos</div>
             )}
           </div>
         ))}
       </div>
       <div class="rooms-cta">
-        <a href="#reservar" class="btn btn-primary">Ver disponibilidad</a>
+        <a href="#book" class="btn btn-primary">Check availability</a>
       </div>
     </div>
   </section>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="rooms-lightbox">
-    <button class="lightbox-close" type="button" aria-label="Cerrar">&times;</button>
-    <button class="lightbox-prev" type="button" aria-label="Anterior">&#8249;</button>
-    <button class="lightbox-next" type="button" aria-label="Siguiente">&#8250;</button>
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-next" type="button" aria-label="Next">&#8250;</button>
     <img src="" alt="" />
   </div>
 
   <!-- AMENITIES -->
-  <section class="amenities" id="amenidades">
+  <section class="amenities" id="amenities">
     <div class="container">
       <span class="section-label">{content.amenities.label}</span>
       <h2 class="amenities-heading">{content.amenities.heading}</h2>
@@ -208,7 +208,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
   </section>
 
   <!-- LOCATION -->
-  <section class="location" id="ubicacion">
+  <section class="location" id="location">
     <div class="container">
       <span class="section-label">{content.location.label}</span>
       <h2 class="location-heading">{content.location.heading}</h2>
@@ -251,11 +251,11 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
         {content.rules.whatsappNumber}
       </a>
     </p>
-    <a href="#reservar" class="btn btn-primary rules-cta">Quiero Reservar</a>
+    <a href="#book" class="btn btn-primary rules-cta">I Want to Book</a>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section" id="reservar">
+  <section class="cta-section" id="book">
     <img src="/images/caite/cta-bg.jpg" alt="" class="cta-bg" loading="lazy" />
     <div class="cta-overlay"></div>
     <div class="cta-content container">
@@ -271,7 +271,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
     </div>
   </section>
 
-  <Footer lang="es" />
+  <Footer lang="en" />
 </BaseLayout>
 
 <style>
@@ -473,7 +473,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
     if (!lightboxImg || allImages.length === 0) return;
     currentIndex = ((index % allImages.length) + allImages.length) % allImages.length;
     (lightboxImg as HTMLImageElement).src = allImages[currentIndex];
-    (lightboxImg as HTMLImageElement).alt = `Habitaciones y espacios comunes El Caite Hostel ${currentIndex + 1}`;
+    (lightboxImg as HTMLImageElement).alt = `Rooms and common spaces at El Caite Hostel ${currentIndex + 1}`;
   }
 
   function openLightboxAt(index: number) {
