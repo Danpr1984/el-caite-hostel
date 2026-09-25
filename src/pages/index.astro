@@ -12,10 +12,10 @@ import Icon from "../components/Icon.astro";
    ========================================================= */
 const content = {
   hero: {
-    title: "Tu Hostel en el corazón de San Juan del Sur",
+    title: "Tu Hotel en el corazón de San Juan del Sur",
     subtitle: "San Juan del Sur, Nicaragua",
     cta: "Reservar",
-    ctaSecondary: "Conoce el hostel",
+    ctaSecondary: "Conoce el hotel",
   },
   intro: {
     stats: [
@@ -26,9 +26,9 @@ const content = {
     ],
   },
   split: {
-    label: "El Hostel",
+    label: "El Hotel",
     heading: "Un lugar para conocer gente y descansar bien",
-    text: "Ubicado en el malecón de San Juan del Sur, a solo 3 minutos caminando de la playa y el puerto, El Caite Hostel es un punto de encuentro para viajeros que buscan surf, comunidad y buena energía. Terraza, wifi gratuito y un equipo listo para ayudarte a armar tu itinerario.",
+    text: "Ubicado en el malecón de San Juan del Sur, a solo 3 minutos caminando de la playa y el puerto, El Caite Hotel es un punto de encuentro para viajeros que buscan surf, comunidad y buena energía. Terraza, wifi gratuito y un equipo listo para ayudarte a armar tu itinerario.",
     images: [
       "/images/caite/about-1.jpg",
       "/images/caite/san-juan-2.jpg",
@@ -39,7 +39,7 @@ const content = {
   rooms: {
     label: "Habitaciones",
     heading: "Habitaciones y Espacios Comunes",
-    text: "Todas nuestras habitaciones son privadas, con baño propio. Estas son fotos reales del hostel, para que sepas exactamente qué esperar.",
+    text: "Todas nuestras habitaciones son privadas, con baño propio. Estas son fotos reales del hotel, para que sepas exactamente qué esperar.",
     features: ["Baño privado", "Aire acondicionado", "Habitaciones sin humo", "Ambiente familiar"],
     images: [
       "/images/caite/room-dorm-1.jpg",
@@ -53,12 +53,12 @@ const content = {
   },
   amenities: {
     label: "Amenidades",
-    heading: "El Caite Hostel incluye",
+    heading: "El Caite Hotel incluye",
     items: [
       { icon: "wifi", title: "Wifi gratis", desc: "En todas las habitaciones y áreas comunes." },
       { icon: "car", title: "Traslado al aeropuerto", desc: "Coordina tu llegada con nosotros." },
       { icon: "utensils", title: "Restaurante", desc: "Comidas disponibles en la propiedad." },
-      { icon: "ban", title: "Habitaciones sin humo", desc: "Todo el hostel es libre de humo." },
+      { icon: "ban", title: "Habitaciones sin humo", desc: "Todo el hotel es libre de humo." },
       { icon: "users", title: "Habitaciones familiares", desc: "Espacio pensado para grupos y familias." },
       { icon: "bell", title: "Servicio de habitaciones", desc: "Atención cuando la necesites." },
       { icon: "martini", title: "Bar", desc: "Bebidas y buen ambiente." },
@@ -68,7 +68,7 @@ const content = {
   ikal: {
     label: "Recomendado",
     heading: "Ikal Resto-Bar",
-    text: "Del mismo equipo detrás de El Caite Hostel — comparten el mismo espacio. El lugar ideal para tomar algo y comer bien después de un día de playa.",
+    text: "Del mismo equipo detrás de El Caite Hotel — comparten el mismo espacio. El lugar ideal para tomar algo y comer bien después de un día de playa.",
     images: ["/images/caite/ikal-1.jpg", "/images/caite/ikal-2.jpg", "/images/caite/ikal-food-1.jpg", "/images/caite/ikal-food-2.jpg", "/images/caite/ikal-food-3.jpg"],
   },
   location: {
@@ -82,7 +82,7 @@ const content = {
     ],
   },
   rules: {
-    label: "Reglas del Hostel",
+    label: "Reglas del Hotel",
     heading: "Para una buena estadía",
     items: [
       "Check-in: desde las 2:00 pm — Check-out: antes de las 12:00 pm",
@@ -110,22 +110,22 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
 ---
 
 <BaseLayout
-  title="El Caite Hostel — San Juan del Sur"
-  description="El Caite Hostel: tu basecamp en San Juan del Sur, Nicaragua. Habitaciones familiares, privadas y espacios comunes a pasos de la playa."
+  title="El Caite Hotel — San Juan del Sur"
+  description="El Caite Hotel: tu basecamp en San Juan del Sur, Nicaragua. Habitaciones familiares, privadas y espacios comunes a pasos de la playa."
   lang="es"
 >
   <Nav lang="es" />
 
   <!-- HERO -->
   <section class="hero">
-    <img src="/images/caite/hero.jpg" alt="El Caite Hostel" class="hero-img" />
+    <img src="/images/caite/hero.jpg" alt="El Caite Hotel" class="hero-img" />
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <span class="hero-location">{content.hero.subtitle}</span>
       <h1>{content.hero.title}</h1>
       <div class="hero-buttons">
         <a href="#reservar" class="btn btn-white">{content.hero.cta}</a>
-        <a href="#hostel" class="btn btn-outline">{content.hero.ctaSecondary}</a>
+        <a href="#hotel" class="btn btn-outline">{content.hero.ctaSecondary}</a>
       </div>
     </div>
   </section>
@@ -143,7 +143,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
   </section>
 
   <!-- SPLIT -->
-  <section class="split" id="hostel">
+  <section class="split" id="hotel">
     <div class="container split-inner">
       <div class="split-text">
         <span class="section-label">{content.split.label}</span>
@@ -151,7 +151,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
         <p>{content.split.text}</p>
       </div>
       <div class="split-carousel">
-        <Carousel images={content.split.images} id="carousel-hostel" alt="El Caite Hostel" aspectRatio="4/3" />
+        <Carousel images={content.split.images} id="carousel-hotel" alt="El Caite Hotel" aspectRatio="4/3" />
       </div>
     </div>
   </section>
@@ -170,7 +170,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
       <div class="rooms-gallery" data-images={JSON.stringify(content.rooms.images)}>
         {content.rooms.images.slice(0, roomsVisibleCount).map((src, i) => (
           <div class="gallery-item" data-index={i}>
-            <img src={src} alt={`Habitaciones y espacios comunes El Caite Hostel ${i + 1}`} loading="lazy" />
+            <img src={src} alt={`Habitaciones y espacios comunes El Caite Hotel ${i + 1}`} loading="lazy" />
             {i === roomsVisibleCount - 1 && roomsExtraCount > 0 && (
               <div class="gallery-more-overlay">+{roomsExtraCount} fotos</div>
             )}
@@ -474,7 +474,7 @@ const roomsExtraCount = Math.max(0, content.rooms.images.length - roomsVisibleCo
     if (!lightboxImg || allImages.length === 0) return;
     currentIndex = ((index % allImages.length) + allImages.length) % allImages.length;
     (lightboxImg as HTMLImageElement).src = allImages[currentIndex];
-    (lightboxImg as HTMLImageElement).alt = `Habitaciones y espacios comunes El Caite Hostel ${currentIndex + 1}`;
+    (lightboxImg as HTMLImageElement).alt = `Habitaciones y espacios comunes El Caite Hotel ${currentIndex + 1}`;
   }
 
   function openLightboxAt(index: number) {

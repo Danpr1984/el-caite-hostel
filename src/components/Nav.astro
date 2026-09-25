@@ -10,7 +10,7 @@ const t = {
     otherLang: "/en/",
     otherLangLabel: "EN",
     links: [
-      { href: "#hostel", label: "El Hostel" },
+      { href: "#hotel", label: "El Hotel" },
       { href: "#habitaciones", label: "Habitaciones" },
       { href: "#amenidades", label: "Amenidades" },
       { href: "#ubicacion", label: "Ubicación" },
@@ -22,7 +22,7 @@ const t = {
     otherLang: "/",
     otherLangLabel: "ES",
     links: [
-      { href: "#hostel", label: "The Hostel" },
+      { href: "#hotel", label: "The Hotel" },
       { href: "#rooms", label: "Rooms" },
       { href: "#amenities", label: "Amenities" },
       { href: "#location", label: "Location" },
@@ -34,7 +34,7 @@ const t = {
 
 <header class="nav" id="site-nav">
   <div class="nav-inner container">
-    <a href={t.home} class="nav-logo">El Caite Hostel</a>
+    <a href={t.home} class="nav-logo">El Caite Hotel</a>
     <nav class="nav-links">
       {t.links.map((link) => (
         <a href={link.href}>{link.label}</a>
