@@ -17,6 +17,16 @@ const { title, description, lang } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://el-caite-hostel.vercel.app/images/caite/hero.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="El Caite Hostel" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://el-caite-hostel.vercel.app/images/caite/hero.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style is:global>
